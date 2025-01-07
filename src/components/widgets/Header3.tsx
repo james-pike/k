@@ -1,4 +1,4 @@
-import { $, component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import {
 
   ThemePrimaryColors,
