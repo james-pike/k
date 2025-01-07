@@ -14,7 +14,6 @@ import IconSun from "../icons/IconSun";
 import MenuAccordion from "./MenuAccordion";
 
 // import IconMenu from "../icons/IconMenu";
-import IconMenu from "../icons/IconMenu";
 import KoinLogo from "../common/KoinLogo";
 import IconTelegram from "../icons/IconTelegram";
 import IconTwitter from "../icons/IconTwitter";
