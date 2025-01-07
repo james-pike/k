@@ -158,32 +158,32 @@ export default component$(() => {
   {/* Center-Aligned Navigation */}
   <nav class="hidden md:flex items-center justify-center space-x-6 mx-auto">
     <a
-      href="#home"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      href="/roadmap"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
-      Story
+      About
     </a>
     <a
-      href="#about"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      href="/roadmap"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       Roadmap
     </a>
     <a
       href="#services"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
     >
       Games
     </a>
     <a
       href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
     >
       Community
     </a>
     <a
       href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
     >
       Merch
     </a>

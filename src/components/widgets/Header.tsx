@@ -46,7 +46,7 @@ export default component$(() => {
               <nav class="hidden md:block items-center justify-center space-x-6 mx-auto">
                 <a
                   href="#home"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
+                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] dark:hover:text-[#70C7BA] transition-colors"
                 >
                   About
                 </a>
