@@ -1,43 +1,28 @@
 import { component$ } from '@builder.io/qwik';
-import { Headline } from '../ui/Headline';
-import FAQ from './FAQ';
+import { Image } from "@unpic/qwik";
 
 
-
-interface Item {
-  title?: string;
-  description?: string;
-  icon?: any;
-  classes?: Record<string, string>;
-}
-
-interface Props {
-  id?: string;
-  title?: any;
-  subtitle?: any;
-  highlight?: any;
-  items: Array<Item>;
-  isDark?: boolean;
-  classes?: any;
-}
-
-
-
-export default component$((props: Props) => {
-  const { title = "", subtitle = "", highlight = "", classes = {} } = props;
-
+export default component$(() => {
   return (
-    <div class="relative bg-white/80 dark:bg-gray-900/80 overflow-hidden flex items-center justify-center mx-1.5 my-1 border-radius-dot-25 rounded-lg">
-      <div class="relative max-w-4xl mx-auto px-1.5 py-1.5 lg:px-8">
-        <div class="max-w-3xl mx-auto lg:mt-24 bg-white/95 dark:bg-slate-900/95 rounded-lg pt-6 p-3 border-radius-dot-25">
-          <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+    <div class="relative bg-white/80 dark:bg-gray-900/80 overflow-hidden flex items-center justify-center mx-1.5 mt-1 mb-2 border-radius-dot-25 rounded-lg">
 
-          <FAQ/>
-         
-        </div>
-      </div>
-      
-    </div>
-    
+
+    <section class="relative rounded-lg not-prose mx-1.5 my-1.5 bg-white/75 dark:bg-gray-900/90 border-radius-dot-25">
+
+
+
+    <Image
+    src="/images/roadmap.jpg"
+    layout="constrained"
+    width={1920}
+    height={1080}
+    alt="Full-Width Hero Image"
+    class="w-full h-auto object-cover rounded-sm pb-1.5"
+    priority={true}
+  />
+  
+  </section>
+  </div>
+
   );
 });

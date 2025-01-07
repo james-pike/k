@@ -158,7 +158,7 @@ export default component$(() => {
   {/* Center-Aligned Navigation */}
   <nav class="hidden md:flex items-center justify-center space-x-6 mx-auto">
     <a
-      href="/roadmap"
+      href="/about"
       class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       About
@@ -170,23 +170,18 @@ export default component$(() => {
       Roadmap
     </a>
     <a
-      href="#services"
-      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
+      href="/services"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] "
     >
-      Games
+      Links
     </a>
     <a
-      href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
+      href="/contact"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] "
     >
-      Community
+      Contact
     </a>
-    <a
-      href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] hover:text-[#70C7BA] "
-    >
-      Merch
-    </a>
+ 
   </nav>
 
   {/* Call to Action Button */}
