@@ -120,7 +120,7 @@ export default component$(() => {
 
   return (
     <footer class="py-1.5 px-1.5 bg-gradient-to-r from-[#70C7BA] via-[#70C7BA]/30 to-[#70C7BA]">
-      <div class="max-w-7xl mx-auto px-4 bg-white/90 dark:bg-gray-900 shadow-lg border-radius-dot-25 rounded-lg">
+      <div class="max-w-8xl mx-auto px-4 bg-white/90 dark:bg-gray-900 shadow-lg border-radius-dot-25 rounded-lg">
         <div class="grid grid-cols-12 gap-4 gap-y-4 sm:gap-8 pt-6 pb-2 md:py-12">
           <div class="col-span-12 lg:col-span-4 pr-8 sm:pl-2">
           <div class="flex items-center mb-4">
