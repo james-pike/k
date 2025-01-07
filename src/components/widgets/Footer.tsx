@@ -2,7 +2,6 @@ import { $, component$, useComputed$, useStore, useVisibleTask$ } from "@builder
 import { Link } from "@builder.io/qwik-city";
 
 import IconTwitter from "~/components/icons/IconTwitter";
-import IconFacebook from "~/components/icons/IconFacebook";
 import IconTelegram from "../icons/IconTelegram";
 import { ThemeBaseColors, ThemeBorderRadiuses, ThemeConfig, ThemeFonts, ThemePrimaryColors, ThemeStyles } from "@qwik-ui/utils";
 import { useTheme } from "~/lib/provider";
