@@ -170,13 +170,13 @@ export default component$(() => {
       Roadmap
     </a>
     <a
-      href="/services"
+      href="/"
       class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] "
     >
       Links
     </a>
     <a
-      href="/contact"
+      href="/"
       class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] "
     >
       Contact
