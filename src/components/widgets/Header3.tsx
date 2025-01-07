@@ -123,7 +123,7 @@ export default component$(() => {
       </button>
       <button
         type="button"
-        class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
+        class="text-gray-50 bg-primary dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle menu"
         onClick$={() => {
           store.isExpanded = !store.isExpanded;
@@ -137,36 +137,36 @@ export default component$(() => {
 
   {/* Center-Aligned Navigation */}
   <nav class="hidden md:flex items-center justify-center space-x-6 mx-auto">
-  <a
-                  href="#home"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="/roadmap"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
-                >
-                  Roadmap
-                </a>
-                <a
-                  href="#services"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
-                >
-                  Exchanges
-                </a>
-                <a
-                  href="#contact"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
-                >
-                  Community
-                </a>
-                <a
-                  href="#contact"
-                  class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
-                >
-                  Merch
-                </a>
+    <a
+      href="#home"
+      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+    >
+      Story
+    </a>
+    <a
+      href="#about"
+      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+    >
+      Roadmap
+    </a>
+    <a
+      href="#services"
+      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+    >
+      Games
+    </a>
+    <a
+      href="#contact"
+      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+    >
+      Community
+    </a>
+    <a
+      href="#contact"
+      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+    >
+      Merch
+    </a>
   </nav>
 
   {/* Call to Action Button */}
