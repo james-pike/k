@@ -123,27 +123,34 @@ export default component$(() => {
           </div>
         </header>
 
-        {/* Overlay Accordion */}
-        {store.isExpanded && (
-          <div
-            class={`absolute inset-x-0 top-[calc(var(--header-height))] z-30 bg-white dark:bg-gray-900 transition-transform duration-300 ${
-              store.isExpanded ? "translate-y-0" : "-translate-y-full"
-            }`}
-            style="--header-height: 4rem;"
-            document:onClick$={(e) => {
-              // Close menu if clicked outside
-              const menuElement = document.querySelector("#header");
-              if (!menuElement?.contains(e.target as Node)) {
-                store.isExpanded = false;
-                document.body.classList.remove("overflow-hidden");
-              }
-            }}
-          >
-            <div class="relative">
-              <MenuAccordion />
-            </div>
-          </div>
-        )}
+    {/* Overlay Accordion */}
+{store.isExpanded && (
+  <div
+    class={`absolute inset-x-0 top-[calc(var(--header-height))] z-30 bg-white dark:bg-gray-900 transition-transform duration-300 ${
+      store.isExpanded ? "translate-y-0" : "-translate-y-full"
+    }`}
+    style="--header-height: 4rem;"
+    document:onClick$={(e) => {
+      // Close menu if clicked outside
+      const menuElement = document.querySelector("#header");
+      if (!menuElement?.contains(e.target as Node)) {
+        store.isExpanded = false;
+        document.body.classList.remove("overflow-hidden");
+      }
+    }}
+  >
+    <div
+      class="relative"
+      onClick$={(e) => {
+        // Prevent click inside MenuAccordion from closing the menu
+        e.stopPropagation();
+      }}
+    >
+      <MenuAccordion />
+    </div>
+  </div>
+)}
+        
       </div>
     </>
   );
