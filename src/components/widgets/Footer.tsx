@@ -118,7 +118,7 @@ export default component$(() => {
   </g>
 </svg> */}
 
-          Donate: kaspa:qqdgtudp42jxd0pqpxzz79adrrmhd52kcw5azuszx8z9ura0d7r2utmcwaefd
+          Donate: kaspa:qqdgtudp42jxd0pqpxzz79adrrmhd52k
           </div>
         </div>
       </div>
