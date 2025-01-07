@@ -59,7 +59,7 @@ export default component$(() => {
 
 
 
-            <div class="basis-1/2 ">
+            <div class="basis-1/2 overflow-hidden">
             <Image
               src="/images/koin.png"
               layout="constrained"
