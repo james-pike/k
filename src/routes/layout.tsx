@@ -4,6 +4,7 @@ import Footer from "~/components/widgets/Footer";
 
 // import Footer from "~/components/widgets/Footer";
 import Header from "~/components/widgets/Header";
+import Header3 from "~/components/widgets/Header3";
 
 const gridItemsHTML = new Array(30)
   .fill(null)
@@ -25,7 +26,7 @@ export default component$(() => {
         class="grid-background dark:bg-black absolute inset-0 -z-10 grid grid-cols-6 gap-1"
         dangerouslySetInnerHTML={gridItemsHTML}
       ></div>
-      <Header />
+      <Header3 />
     
       <main>
         
