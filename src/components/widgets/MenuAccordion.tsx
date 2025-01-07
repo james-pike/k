@@ -61,12 +61,13 @@ export default component$(() => {
         <Accordion.Content class=" py-2">
           {/* Service Links with Highlight and Divider */}
           <div class="hover:bg-[#70C7BA]/35 transition border-b border-gray-300 dark:border-gray-700 last:border-none">
-            <a href="/" class="block text-lg py-3 px-2">KSPR Bot</a>
+            <a href="https://www.kaspiano.com/token/koin?ref=koin" class="block text-lg py-3 px-2">Kaspiano</a>
           </div>
           <div class="hover:bg-[#70C7BA]/35 transition border-b border-gray-300 dark:border-gray-700 last:border-none">
-            <a href="/" class="block text-lg py-3 px-2">Chainge *coming soon*</a>
+            <a href="https://krc20.chainge.finance/" class="block text-lg py-3 px-2">Chainge (coming soon)</a>
           </div>
-      
+    
+
         </Accordion.Content>
       </Accordion.Item>
 
