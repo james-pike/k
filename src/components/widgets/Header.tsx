@@ -1,10 +1,5 @@
 import { component$, useStore } from "@builder.io/qwik";
-import {
 
-  ThemePrimaryColors,
-
-  
-} from "@qwik-ui/utils";
 
 import MenuAccordion from "./MenuAccordion";
 
