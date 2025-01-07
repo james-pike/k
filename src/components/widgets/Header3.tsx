@@ -16,6 +16,9 @@ import MenuAccordion from "./MenuAccordion";
 // import IconMenu from "../icons/IconMenu";
 import IconMenu from "../icons/IconMenu";
 import KoinLogo from "../common/KoinLogo";
+import IconTelegram from "../icons/IconTelegram";
+import IconTwitter from "../icons/IconTwitter";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const { themeSig } = useTheme();
@@ -122,7 +125,7 @@ export default component$(() => {
       </button>
       <button
         type="button"
-        class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
+        class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle menu"
         onClick$={() => {
           store.isExpanded = !store.isExpanded;
@@ -170,7 +173,24 @@ export default component$(() => {
 
   {/* Call to Action Button */}
   <div class="hidden md:flex items-center">
-    <IconSun/>
+    <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"Telegram"}
+                      title={"Telegram"}
+                      href={"https://t.me/+Zhe2fvsS1WQyNTA0"}
+                    >
+                      <IconTelegram />
+                    </Link>
+    
+                    <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"X"}
+                      title={"X"}
+                      href={"https://x.com/kaskrc20token"}
+    
+                    >
+                      <IconTwitter />
+                    </Link>
   <a
                   href="#cta"
                   class="px-4 py-2 text-white bg-[#70C7BA] hover:bg-gray-50 rounded-lg shadow-md transition-colors"
