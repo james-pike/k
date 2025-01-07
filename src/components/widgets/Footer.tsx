@@ -103,7 +103,7 @@ export default component$(() => {
           </ul>
           <div class="text-sm text-gray-700 mr-4 pb-2 dark:text-slate-400 flex items-center">
        
-<svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewBox="0 0 197.05 196.86" class="hidden sm:block">
+{/* <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewBox="0 0 197.05 196.86" class="hidden sm:block">
   <defs>
    
   </defs>
@@ -116,7 +116,7 @@ export default component$(() => {
       <rect class="fill-none" x=".09" y="-.09" width="196.86" height="197.05" transform="translate(196.96 -.09) rotate(90)"></rect>
     </g>
   </g>
-</svg>
+</svg> */}
 
           Donate: kaspa:qqdgtudp42jxd0pqpxzz79adrrmhd52kcw5azuszx8z9ura0d7r2utmcwaefd
           </div>
