@@ -1,5 +1,4 @@
 import { $, component$, useComputed$, useStore, useVisibleTask$ } from "@builder.io/qwik";
-import { Logo } from "../common/Logo";
 import {
   ThemeConfig,
   ThemeFonts,
