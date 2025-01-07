@@ -1,6 +1,5 @@
-import { component$, Slot, useContextProvider } from "@builder.io/qwik";
-import { APP_STATE_CONTEXT_ID } from "~/_state/app-state-context-id";
-import { AppState } from "~/_state/app-state.type";
+import { component$, Slot} from "@builder.io/qwik";
+
 import Footer from "~/components/widgets/Footer";
 
 // import Footer from "~/components/widgets/Footer";
@@ -16,14 +15,9 @@ const gridItemsHTML = new Array(30)
   .join("");
 
 export default component$(() => {
-  const appState: AppState = {
-    featureFlags: {
-      showStyled: true,
-      showNeumorphic: false,
-    },
-  };
 
-  useContextProvider(APP_STATE_CONTEXT_ID, appState);
+
+
 
   return (
     <>
@@ -34,6 +28,7 @@ export default component$(() => {
       <Header />
     
       <main>
+        
         <Slot />
       </main>
       <Footer/>

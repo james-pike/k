@@ -165,7 +165,7 @@ export default component$(() => {
       About
     </a>
     <a
-      href="#about"
+      href="/roadmap"
       class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       Roadmap
