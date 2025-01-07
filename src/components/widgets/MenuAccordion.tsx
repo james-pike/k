@@ -22,6 +22,13 @@ export default component$(() => {
        
       </Accordion.Item>
 
+      <Accordion.Item class="dark:border-gray-700">
+        <Accordion.Trigger class="text-xl flex trigger-text justify-between hover:text-[#70C7BA] items-center py-3 border-b border-gray-300 dark:border-gray-700">
+          <span>Links</span>
+        </Accordion.Trigger>
+       
+      </Accordion.Item>
+
 
 
 
