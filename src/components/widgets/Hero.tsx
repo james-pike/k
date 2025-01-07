@@ -27,7 +27,7 @@ export default component$(() => {
               </h1>
               <div class="max-w-3xl mx-auto lg:max-w-none">
                 <p class="text-xl mb-6 dark:text-slate-300">
-                  Get some <span class="font-semibold">KOIN</span>—the hottest memecoin on the Kaspa chain. Everyone needs some K in their wallet.
+                  Get some <span class="font-semibold">KOIN</span>—the hottest memecoin on the Kaspa chain. Everyone needs some KOIN in their wallet.
                 </p>
 
                 <div class=" sm:max-w-md m-auto grid grid-cols-1 border-radius-dot-25 gap-4 sm:grid-cols-2 lg:grid-cols-2 lg:max-w-7xl">
