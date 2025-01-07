@@ -32,7 +32,7 @@ const links = [
 const social = [
   { label: "Twitter", icon: IconTwitter, href: "https://x.com/kaskrc20token" },
   { label: "Instagram", icon: IconTelegram, href: "https://t.me/+Zhe2fvsS1WQyNTA0" },
-  { label: "Facebook", icon: IconFacebook, href: "#" },
+  
 
 ];
 
@@ -134,7 +134,7 @@ export default component$(() => {
 </div>
 
             <div class="text-sm text-gray-600 dark:text-gray-400">
-              Everyone needs some Koin in their wallet.
+              Everyone needs some KOIN in their wallet.
             </div>
           </div>
           {links.map(({ title, items }, index) => (
