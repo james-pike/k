@@ -1,5 +1,4 @@
 import { $, component$, useComputed$, useStore, useVisibleTask$ } from "@builder.io/qwik";
-import { Logo } from "../common/Logo";
 import {
   ThemeConfig,
   ThemeFonts,
@@ -16,13 +15,19 @@ import MenuAccordion from "./MenuAccordion";
 
 // import IconMenu from "../icons/IconMenu";
 import IconMenu from "../icons/IconMenu";
+import KoinLogo from "../common/KoinLogo";
+import { Link } from "@builder.io/qwik-city";
+import IconTwitter from "../icons/IconTwitter";
+import IconTelegram from "../icons/IconTelegram";
+
+
 
 export default component$(() => {
   const { themeSig } = useTheme();
  
   const store = useStore({
     theme: (typeof window !== "undefined" && window.localStorage.theme) || "light",
-    primaryColor: (typeof window !== "undefined" && window.localStorage.primaryColor) || ThemePrimaryColors.CYAN600,
+    primaryColor: (typeof window !== "undefined" && window.localStorage.primaryColor) || [ThemePrimaryColors.CYAN600],
     isScrolling: false,
     isExpanded: false,
   });
@@ -105,9 +110,26 @@ export default component$(() => {
     <div class="relative text-default py-3 sm:py-2 px-3 md:px-6 mx-auto w-full md:flex md:justify-between items-center max-w-7xl">
   <div class="flex items-center justify-between w-full md:w-auto">
     <a class="flex items-center" href={"/"}>
-      <Logo />
+      <KoinLogo />
     </a>
     <div class="flex items-center md:hidden">
+    <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"Telegram"}
+                      title={"Telegram"}
+                      href={"https://x.com/kaskrc20token"}
+                    >
+                      <IconTelegram/>
+                    </Link>
+
+                    <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"X"}
+                      title={"X"}
+                      href={"https://t.me/+Zhe2fvsS1WQyNTA0"}
+                    >
+                      <IconTwitter/>
+                    </Link>
       <button
         type="button"
         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
@@ -122,7 +144,7 @@ export default component$(() => {
       </button>
       <button
         type="button"
-        class="text-gray-50 bg-primary dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
+        class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle menu"
         onClick$={() => {
           store.isExpanded = !store.isExpanded;
@@ -138,43 +160,76 @@ export default component$(() => {
   <nav class="hidden md:flex items-center justify-center space-x-6 mx-auto">
     <a
       href="#home"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
-      Story
+      About
     </a>
     <a
       href="#about"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       Roadmap
     </a>
     <a
       href="#services"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
-      Games
+      Exchanges
     </a>
     <a
       href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       Community
     </a>
     <a
       href="#contact"
-      class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+      class="text-gray-600 dark:text-gray-300 hover:text-[#70C7BA] transition-colors"
     >
       Merch
     </a>
+
+     
+     
   </nav>
+
+  <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"Telegram"}
+                      title={"Telegram"}
+                      href={"https://x.com/kaskrc20token"}
+                    >
+                      <IconTelegram/>
+                    </Link>
+
+                    <Link
+                      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={"X"}
+                      title={"X"}
+                      href={"https://t.me/+Zhe2fvsS1WQyNTA0"}
+                    >
+                      <IconTwitter/>
+                    </Link>
+  <button
+        type="button"
+        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+        aria-label="Toggle between Dark and Light mode"
+        onClick$={async () => {
+          themeComputedObjectSig.value.mode =
+            themeComputedObjectSig.value.mode?.includes("light") ? "dark" : "light";
+          themeSig.value = await themeStoreToThemeClasses$();
+        }}
+      >
+        {store.theme == "dark" ? <IconMoon /> : <IconSun />}
+      </button>
 
   {/* Call to Action Button */}
   <div class="hidden md:flex items-center">
     <a
       href="#cta"
-      class="px-4 py-2 text-white bg-primary hover:bg-primary-dark rounded-lg shadow-md transition-colors"
+      class="px-4 py-2 text-white bg-[#70C7BA] hover:bg-primary-dark rounded-lg shadow-md transition-colors"
     >
-      Buy $Froppy
+      Buy $KOIN
     </a>
   </div>
 </div>

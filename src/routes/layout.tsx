@@ -10,7 +10,7 @@ const gridItemsHTML = new Array(30)
   .fill(null)
   .map(
     () =>
-      `<div class="bg-primary animate-pulse" style="animation-delay: ${Math.random() * 5}s; 
+      `<div class="bg-[#70C7BA] animate-pulse" style="animation-delay: ${Math.random() * 5}s; 
     animation-duration: ${3 + Math.random() * 3}s"></div>`
   )
   .join("");

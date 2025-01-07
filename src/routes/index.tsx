@@ -11,14 +11,7 @@ export default component$(() => {
 <Hero />
 
 
-      <Memes highlight="Froppy Memes"
-        title="Share Memes & Win Prizes"
-        subtitle="Top Raiders receive bonus Froppy every week"
-         items={[ {
-
-          },
-        ]}
-      />
+  
 
 
       
