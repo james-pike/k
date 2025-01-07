@@ -5,7 +5,8 @@ import IconTwitter from "~/components/icons/IconTwitter";
 import IconTelegram from "../icons/IconTelegram";
 import { ThemeBaseColors, ThemeBorderRadiuses, ThemeConfig, ThemeFonts, ThemePrimaryColors, ThemeStyles } from "@qwik-ui/utils";
 import { useTheme } from "~/lib/provider";
-
+import IconMoon from "../icons/IconMoon";
+import IconSun from "../icons/IconSun";
 
 const links = [
   {
@@ -170,7 +171,18 @@ export default component$(() => {
                 </Link>
               </li>
             ))}
-            
+              <button
+                  type="button"
+                  class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label="Toggle between Dark and Light mode"
+                  onClick$={async () => {
+                    themeComputedObjectSig.value.mode =
+                      themeComputedObjectSig.value.mode?.includes("light") ? "dark" : "light";
+                    themeSig.value = await themeStoreToThemeClasses$();
+                  }}
+                >
+                  {store.theme == "dark" ? <IconMoon /> : <IconSun />}
+                </button>
           </ul>
 
         
