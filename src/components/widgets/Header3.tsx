@@ -122,7 +122,7 @@ export default component$(() => {
       </button>
       <button
         type="button"
-        class="text-gray-50 bg-primary dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
+        class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle menu"
         onClick$={() => {
           store.isExpanded = !store.isExpanded;
