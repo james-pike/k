@@ -170,6 +170,7 @@ export default component$(() => {
 
   {/* Call to Action Button */}
   <div class="hidden md:flex items-center">
+    <IconSun/>
   <a
                   href="#cta"
                   class="px-4 py-2 text-white bg-[#70C7BA] hover:bg-gray-50 rounded-lg shadow-md transition-colors"
