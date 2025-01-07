@@ -1,26 +1,21 @@
-import { $, component$, useComputed$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { $, component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import {
-  ThemeConfig,
-  ThemeFonts,
-  ThemeStyles,
-  ThemeBaseColors,
+
   ThemePrimaryColors,
-  ThemeBorderRadiuses,
   
 } from "@qwik-ui/utils";
-import { useTheme } from "~/lib/provider";
-import IconMoon from "../icons/IconMoon";
-import IconSun from "../icons/IconSun";
+
 import MenuAccordion from "./MenuAccordion";
 
 // import IconMenu from "../icons/IconMenu";
+import IconMenu from "../icons/IconMenu";
 import KoinLogo from "../common/KoinLogo";
 import IconTelegram from "../icons/IconTelegram";
 import IconTwitter from "../icons/IconTwitter";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const { themeSig } = useTheme();
+  
  
   const store = useStore({
     theme: (typeof window !== "undefined" && window.localStorage.theme) || "light",
@@ -29,45 +24,7 @@ export default component$(() => {
     isExpanded: false,
   });
 
-  const themeComputedObjectSig = useComputed$((): ThemeConfig => {
-    if (!store.theme || store.theme === "light") {
-      return {
-        font: ThemeFonts.SANS,
-        mode: store.theme,
-        style: ThemeStyles.SIMPLE,
-        baseColor: ThemeBaseColors.SLATE,
-        primaryColor: store.primaryColor,
-        borderRadius: ThemeBorderRadiuses["BORDER-RADIUS-0"],
-      };
-    }
-
-    if (store.theme === "dark") {
-      return {
-        font: ThemeFonts.SANS,
-        mode: store.theme,
-        style: ThemeStyles.SIMPLE,
-        baseColor: ThemeBaseColors.SLATE,
-        primaryColor: store.primaryColor,
-        borderRadius: ThemeBorderRadiuses["BORDER-RADIUS-0"],
-      };
-    }
-
-    let themeArray: string[] = [];
-    if (themeSig?.value) {
-      themeArray = Array.isArray(themeSig.value)
-        ? themeSig.value
-        : themeSig.value.split(" ");
-    }
-
-    return {
-      font: themeArray[0],
-      mode: themeArray[1],
-      style: themeArray[2],
-      baseColor: themeArray[3],
-      primaryColor: themeArray[4],
-      borderRadius: themeArray[5],
-    };
-  });
+  
 
   useVisibleTask$(() => {
     store.theme = document.documentElement.classList.contains("dark")
@@ -78,11 +35,7 @@ export default component$(() => {
     store.primaryColor = storedPrimaryColor || "defaultColor";
   });
 
-  const themeStoreToThemeClasses$ = $((): string => {
-    const { font, mode, style, baseColor, primaryColor, borderRadius } =
-      themeComputedObjectSig.value;
-    return [font, mode, style, baseColor, primaryColor, borderRadius].join(" ");
-  });
+
 
  
   return (
@@ -110,18 +63,7 @@ export default component$(() => {
        <KoinLogo />
     </a>
     <div class="flex items-center md:hidden">
-      <button
-        type="button"
-        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-        aria-label="Toggle between Dark and Light mode"
-        onClick$={async () => {
-          themeComputedObjectSig.value.mode =
-            themeComputedObjectSig.value.mode?.includes("light") ? "dark" : "light";
-          themeSig.value = await themeStoreToThemeClasses$();
-        }}
-      >
-        {store.theme == "dark" ? <IconMoon /> : <IconSun />}
-      </button>
+ 
       <Link
                         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                         aria-label={"Telegram"}
@@ -140,7 +82,7 @@ export default component$(() => {
                       >
                         <IconTwitter />
                       </Link>
-      {/* <button
+      <button
         type="button"
         class="text-gray-50 bg-[#70C7BA] dark:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-sm text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle menu"
@@ -150,7 +92,7 @@ export default component$(() => {
         }}
       >
         <IconMenu />
-      </button> */}
+      </button>
     </div>
   </div>
 
