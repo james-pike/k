@@ -3,7 +3,6 @@ import { component$, Slot} from "@builder.io/qwik";
 import Footer from "~/components/widgets/Footer";
 
 // import Footer from "~/components/widgets/Footer";
-import Header from "~/components/widgets/Header";
 import Header3 from "~/components/widgets/Header3";
 
 const gridItemsHTML = new Array(30)
