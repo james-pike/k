@@ -12,9 +12,10 @@ const links = [
   {
     title: "About",
     items: [
-      { title: "Roadmap", href: "#" },
+      { title: "Team", href: "/about" },
+      { title: "Roadmap", href: "/roadmap" },
       { title: "Tokenomics", href: "#" },
-      { title: "Hosting Solutions", href: "#" },
+      
     ],
   },
   {

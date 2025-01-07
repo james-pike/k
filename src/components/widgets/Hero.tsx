@@ -33,9 +33,15 @@ export default component$(() => {
                 <div class=" sm:max-w-md m-auto grid grid-cols-1 border-radius-dot-25 gap-4 sm:grid-cols-2 lg:grid-cols-2 lg:max-w-7xl">
 
                   <div class="flex w-full">
-                    <button class="btn w-full bg-[#B6B6B6] py-2 rounded-sm font-semibold dark:text-white ">
-                      Join Telegram
-                    </button>
+                    
+                  <a 
+  href="https://t.me/+Zhe2fvsS1WQyNTA0" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="btn w-full bg-[#B6B6B6] py-2 rounded-sm font-semibold dark:text-white text-center block"
+>
+  Join Telegram
+</a>
                   </div>
                   <div class="flex w-full">
                     <button class="btn w-full bg-[#70C7BA] py-2 rounded-sm font-semibold dark:text-gray-50">
