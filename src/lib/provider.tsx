@@ -31,7 +31,7 @@ import { ThemeScript } from './theme-script';
       enableColorScheme = true,
       storageKey = 'theme',
       themes = defaultThemes,
-      defaultTheme = enableSystem ? 'system' : 'dark',
+      defaultTheme = enableSystem ? 'system' : 'light',
       attribute = 'data-theme',
       value,
       nonce,

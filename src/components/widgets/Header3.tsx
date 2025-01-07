@@ -9,7 +9,8 @@ import {
   
 } from "@qwik-ui/utils";
 import { useTheme } from "~/lib/provider";
-
+import IconMoon from "../icons/IconMoon";
+import IconSun from "../icons/IconSun";
 import MenuAccordion from "./MenuAccordion";
 
 // import IconMenu from "../icons/IconMenu";
@@ -110,7 +111,7 @@ export default component$(() => {
        <KoinLogo />
     </a>
     <div class="flex items-center md:hidden">
-      {/* <button
+      <button
         type="button"
         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
         aria-label="Toggle between Dark and Light mode"
@@ -121,7 +122,7 @@ export default component$(() => {
         }}
       >
         {store.theme == "dark" ? <IconMoon /> : <IconSun />}
-      </button> */}
+      </button>
       <Link
                         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                         aria-label={"Telegram"}
@@ -190,6 +191,18 @@ export default component$(() => {
 
   {/* Call to Action Button */}
   <div class="hidden md:flex items-center">
+  <button
+        type="button"
+        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+        aria-label="Toggle between Dark and Light mode"
+        onClick$={async () => {
+          themeComputedObjectSig.value.mode =
+            themeComputedObjectSig.value.mode?.includes("light") ? "dark" : "light";
+          themeSig.value = await themeStoreToThemeClasses$();
+        }}
+      >
+        {store.theme == "dark" ? <IconMoon /> : <IconSun />}
+      </button>
     <Link
                       class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                       aria-label={"Telegram"}
