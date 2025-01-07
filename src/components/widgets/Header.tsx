@@ -1,7 +1,6 @@
 import { component$, useStore } from "@builder.io/qwik";
 
 
-import MenuAccordion from "./MenuAccordion";
 
 // import IconMenu from "../icons/IconMenu";
 import IconMenu from "../icons/IconMenu";
