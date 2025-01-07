@@ -1,30 +1,106 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useComputed$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 import IconTwitter from "~/components/icons/IconTwitter";
 import IconFacebook from "~/components/icons/IconFacebook";
-import IconGithub from "~/components/icons/IconGithub";
 import IconTelegram from "../icons/IconTelegram";
+import { ThemeBaseColors, ThemeBorderRadiuses, ThemeConfig, ThemeFonts, ThemePrimaryColors, ThemeStyles } from "@qwik-ui/utils";
+import { useTheme } from "~/lib/provider";
+import IconMoon from "../icons/IconMoon";
+import IconSun from "../icons/IconSun";
 
+const links = [
+  {
+    title: "About",
+    items: [
+      { title: "Roadmap", href: "#" },
+      { title: "Tokenomics", href: "#" },
+      { title: "Hosting Solutions", href: "#" },
+    ],
+  },
+  {
+    title: "Exchanges",
+    items: [
+      { title: "KSPR Bot", href: "#" },
+      { title: "Kaspiano", href: "https://www.kaspiano.com/token/koin?ref=koin" },
+      { title: "Chainge (coming soon)", href: "https://krc20.chainge.finance/" },
+    
+    ],
+  },
+];
+
+const social = [
+  { label: "Twitter", icon: IconTwitter, href: "https://x.com/kaskrc20token" },
+  { label: "Instagram", icon: IconTelegram, href: "https://t.me/+Zhe2fvsS1WQyNTA0" },
+  { label: "Facebook", icon: IconFacebook, href: "#" },
+
+];
 
 export default component$(() => {
-  const links = [
-    {
-      title: "About",
-      items: [
-        { title: "Roadmap", href: "#" },
-        { title: "Tokenomics", href: "#" },
-        { title: "Hosting Solutions", href: "#" },
-      ],
-    },
-    {
-      title: "Exchanges",
-      items: [
-        { title: "KSPR Bot", href: "#" },
-        { title: "Chainge (coming soon)", href: "#" },
-        { title: "Biconomy (coming soon)", href: "#" },
-      ],
-    },
+
+  const { themeSig } = useTheme();
+   
+    const store = useStore({
+      theme: (typeof window !== "undefined" && window.localStorage.theme) || "light",
+      primaryColor: (typeof window !== "undefined" && window.localStorage.primaryColor) || [ThemePrimaryColors.CYAN600],
+      
+    });
+  
+    const themeComputedObjectSig = useComputed$((): ThemeConfig => {
+      if (!store.theme || store.theme === "light") {
+        return {
+          font: ThemeFonts.SANS,
+          mode: store.theme,
+          style: ThemeStyles.SIMPLE,
+          baseColor: ThemeBaseColors.SLATE,
+          primaryColor: store.primaryColor,
+          borderRadius: ThemeBorderRadiuses["BORDER-RADIUS-0"],
+        };
+      }
+  
+      if (store.theme === "dark") {
+        return {
+          font: ThemeFonts.SANS,
+          mode: store.theme,
+          style: ThemeStyles.SIMPLE,
+          baseColor: ThemeBaseColors.SLATE,
+          primaryColor: store.primaryColor,
+          borderRadius: ThemeBorderRadiuses["BORDER-RADIUS-0"],
+        };
+      }
+  
+      let themeArray: string[] = [];
+      if (themeSig?.value) {
+        themeArray = Array.isArray(themeSig.value)
+          ? themeSig.value
+          : themeSig.value.split(" ");
+      }
+  
+      return {
+        font: themeArray[0],
+        mode: themeArray[1],
+        style: themeArray[2],
+        baseColor: themeArray[3],
+        primaryColor: themeArray[4],
+        borderRadius: themeArray[5],
+      };
+    });
+  
+    useVisibleTask$(() => {
+      store.theme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+  
+      const storedPrimaryColor = localStorage.getItem("primaryColor");
+      store.primaryColor = storedPrimaryColor || "defaultColor";
+    });
+  
+    const themeStoreToThemeClasses$ = $((): string => {
+      const { font, mode, style, baseColor, primaryColor, borderRadius } =
+        themeComputedObjectSig.value;
+      return [font, mode, style, baseColor, primaryColor, borderRadius].join(" ");
+    });
+
     // {
     //   title: "Support",
     //   items: [
@@ -39,20 +115,15 @@ export default component$(() => {
     //     { title: "Privacy Policy", href: "#" },
     //   ],
     // },
-  ];
+  
 
-  const social = [
-    { label: "Twitter", icon: IconTwitter, href: "https://x.com/kaskrc20token" },
-    { label: "Instagram", icon: IconTelegram, href: "https://t.me/+Zhe2fvsS1WQyNTA0" },
-    { label: "Facebook", icon: IconFacebook, href: "#" },
-    { label: "Github", icon: IconGithub, href: "#" },
-  ];
+
 
   return (
     <footer class="py-1.5 px-1.5 bg-gradient-to-r from-[#70C7BA] via-[#70C7BA]/30 to-[#70C7BA]">
       <div class="max-w-7xl mx-auto px-4 bg-white/90 dark:bg-gray-900 shadow-lg border-radius-dot-25 rounded-lg">
         <div class="grid grid-cols-12 gap-4 gap-y-4 sm:gap-8 pt-6 pb-2 md:py-12">
-          <div class="col-span-12 lg:col-span-4 pr-8 pl-2">
+          <div class="col-span-12 lg:col-span-4 pr-8 sm:pl-2">
           <div class="flex items-center mb-4">
   <Link
     class="inline-block font-bold text-[#70C7BA] text-2xl"
@@ -85,6 +156,7 @@ export default component$(() => {
               )}
             </div>
           ))}
+            
         </div>
         <div class="md:flex md:items-center md:justify-between pb-2">
           <ul class="flex mb-2 md:order-1 -ml-2 md:ml-4 md:mb-0">
@@ -100,7 +172,21 @@ export default component$(() => {
                 </Link>
               </li>
             ))}
+              <button
+                  type="button"
+                  class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label="Toggle between Dark and Light mode"
+                  onClick$={async () => {
+                    themeComputedObjectSig.value.mode =
+                      themeComputedObjectSig.value.mode?.includes("light") ? "dark" : "light";
+                    themeSig.value = await themeStoreToThemeClasses$();
+                  }}
+                >
+                  {store.theme == "dark" ? <IconMoon /> : <IconSun />}
+                </button>
           </ul>
+
+        
 
           <div class="text-sm text-gray-700 mr-4 pb-2 dark:text-slate-400 flex items-center">
        
@@ -119,7 +205,7 @@ export default component$(() => {
     </g>
   </g>
 </svg>
-          Donate: kaspa:qqdgtudp42jxd0pqpxzz79adrrmhd52k
+          Donate: kaspa:qqdgtudp42jxd0pqpxzz79adrrmhd52k....
           </div>
         </div>
       </div>
